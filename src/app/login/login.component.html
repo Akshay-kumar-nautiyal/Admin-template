@@ -1,0 +1,31 @@
+<mat-card>
+  <mat-card-content>
+    <div class="header">
+      <h2>Admin Login</h2>
+    </div>
+    <form>
+      <div class="email-input">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            [(ngModel)]="email" name="email"
+              matInput
+              placeholder="Enter email address" required
+            />
+          </mat-form-field>
+      </div>
+      <div class="Password">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+              [(ngModel)]="password" name="password"
+              matInput
+              placeholder="Enter password" required
+            />
+          </mat-form-field>
+      </div>
+      <button mat-flat-button color="primary" (click)="submit()">Login</button>
+    </form>
+  </mat-card-content>
+  <mat-error>{{error}}</mat-error>
+</mat-card>
