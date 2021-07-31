@@ -8,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class SidebarComponent implements OnInit {
 
   constructor() { }
+  data:any ;
 
   ngOnInit(): void {
+      this.data = localStorage.getItem("userData")
+      this.data = JSON.parse(this.data);
+      console.log(this.data.name);
   }
 
 }

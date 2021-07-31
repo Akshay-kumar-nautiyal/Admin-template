@@ -17,11 +17,11 @@ mat-sidenav-container{
   height:calc(100vh - 65px);
   margin:16px;
   margin-left: 32px;
-  display:flex;
+  /* display:flex; */
   justify-content:center;
   align-items:center;
-  font-size: 2rem;
-  color:lightgrey;
+  font-size: 0.7rem;
+  color:black;
   border-radius:10px;
 }
 
@@ -31,10 +31,17 @@ mat-sidenav-container{
   align-items: center;
   justify-content: flex-start;
   font-size: 1rem;
-
+}
   mat-icon {
       margin-right: 8px;
-  }
+
+}
+.side{
+  text-align: center;
+  color:white;
+  background-color:black;
+  align-items:left ;
+  font-size: 1rem;
 }
 
 .avatar {

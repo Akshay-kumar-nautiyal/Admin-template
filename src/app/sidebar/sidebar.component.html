@@ -30,8 +30,16 @@
 
   </mat-sidenav>
   <mat-sidenav-content>
-    <div class="content mat-elevation-z4">
-      Main component
+    <div class="side content mat-elevation-z4" >
+      <h2>User Details</h2>
+      <p >Name : {{data[0].name}}</p>
+      <p>Birth : {{ data[1].birth}}</p>
+      <p>Number : {{data[2].number}}</p>
+      <p>Gender : {{data[3].gender}}</p>
+      <p>Country : {{data[4].country}}</p>
+      <p>Bio : {{data[5].bio}}</p>
+      <p>Email:{{data[6].email1}}</p>
+
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

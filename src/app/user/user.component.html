@@ -1,0 +1,96 @@
+<mat-card>
+  <mat-card-content>
+    <div class="header">
+      <h2>User detail</h2>
+    </div>
+    <form #signInForm="ngForm"  (ngSubmit)="save(signInForm);">
+	<div class="full-name">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Full name</mat-label>
+          <input
+             name="name"
+              matInput
+              placeholder="Enter full name"  required #user_name="ngModel" [(ngModel)]="name" pattern="[a-zA-Z]{5,25}"
+            />
+          </mat-form-field>
+          <small  class="form-text text-muted" *ngIf="user_name.touched && !user_name.valid" class="text-danger"></small>
+      </div>
+	<div class="Birth-day">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Birth-day</mat-label>
+          <input matInput [matDatepicker]="picker" [(ngModel)]="birth" name="birth"
+              matInput
+              placeholder="Enter DOB" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+      </div>
+      <div class="email-input">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+          name="email" ngModel email required #user_email="ngModel" [(ngModel)]="email1"
+              matInput
+              placeholder="Enter email address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}"
+            />
+            <small  class="form-text text-muted" *ngIf="user_email.touched && !user_email.valid" class="text-danger"></small>
+          </mat-form-field>
+      </div>
+	<div class="gender">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>gender</mat-label>
+          <mat-select [(ngModel)]="gender" name="gender"
+              matInput
+              placeholder="Select Gender" required>
+            <mat-option value="Male">Male</mat-option>
+            <mat-option value="Female">Female</mat-option>
+            <mat-option value="outher">Outher</mat-option>
+          </mat-select>
+          </mat-form-field>
+      </div>
+	<div class="country">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Select country</mat-label>
+          <mat-select [(ngModel)]="country" name="country"
+              matInput
+              placeholder="Select country" required>
+            <mat-option value="India">India</mat-option>
+            <mat-option value="Unnited kingdom">United Kingdom</mat-option>
+            <mat-option value="Algeria">Algeria</mat-option>
+            <mat-option value="Afghanistan">Afghanistan</mat-option>
+            <mat-option value="Canada">Canada</mat-option>
+            <mat-option value="China">China</mat-option>
+            <mat-option value="Cuba">Cuba</mat-option>
+            <mat-option value="Egypt">Egypt</mat-option>
+            <mat-option value="outher">Outher</mat-option>
+          </mat-select>
+          </mat-form-field>
+      </div>
+	<div class="phone">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>number</mat-label>
+          <input
+          name="phone" ngModel phone required #phone="ngModel" [(ngModel)]="number" pattern="(0|91)?[7-9][0-9]{9}"
+              matInput
+              placeholder="Enter number"
+            />
+            <br>
+            <span *ngIf="phone.invalid && phone.touched" class="text-danger" class="text-danger"></span>
+          </mat-form-field>
+
+      </div>
+      <div class="bio">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>bio</mat-label>
+          <textarea
+              [(ngModel)]="bio" name="bio"
+              matInput
+              placeholder="Enter Bio"
+            ></textarea>
+          </mat-form-field>
+      </div>
+      <button mat-flat-button color="primary" [disabled]="!signInForm.valid">Save</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+

@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   error = ''
   submit(){
     if(this.email===this.data.email&&this.password===this.data.password){
-      this.router.navigate(['/admin']);
+      this.router.navigate(['/user']);
     }
     else{
       this.error = 'Incorrect user name or password ';

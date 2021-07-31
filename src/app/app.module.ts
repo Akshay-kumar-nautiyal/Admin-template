@@ -18,6 +18,16 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {LoginComponent} from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { UserComponent } from './user/user.component';
+import { AccountComponent } from './account/account.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,10 +35,20 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     SidebarComponent,
     LoginComponent,
+    UserComponent,
+    AccountComponent,
 
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    NgMultiSelectDropDownModule.forRoot(),
+    MatDatepickerModule,
+    MatCheckboxModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatGridListModule,
+    MatRadioModule,
     MatFormFieldModule,
     MatInputModule,
     MatSidenavModule,
